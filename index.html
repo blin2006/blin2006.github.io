@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Beijing Lin - Electrical Engineering Co-op student at UBC. Portfolio of embedded systems, robotics, software, and FPGA projects.">
+  <meta name="description" content="Beijing Lin - Electrical Engineering Co-op student at UBC. Engineering portfolio featuring embedded systems, robotics, FPGA, and software projects.">
   <title>Beijing Lin | Engineering Portfolio</title>
 
   <style>
@@ -45,8 +45,6 @@
       width: min(1100px, 90%);
       margin: 0 auto;
     }
-
-    /* Navigation */
 
     nav {
       position: sticky;
@@ -90,8 +88,6 @@
     .nav-links a:hover {
       color: var(--blue);
     }
-
-    /* Home */
 
     .hero {
       min-height: 78vh;
@@ -179,11 +175,9 @@
       background: var(--surface-hover);
     }
 
-    /* General sections */
-
     section {
       padding: 85px 0;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 100px;
     }
 
     .section-heading {
@@ -233,8 +227,6 @@
       font-size: 12px;
     }
 
-    /* Projects */
-
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -261,6 +253,27 @@
       margin-bottom: 14px;
     }
 
+    .project-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      background: #0b1526;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .project-image {
+      transform: scale(1.02);
+    }
+
+    .project-image.contain {
+      object-fit: contain;
+      padding: 10px;
+    }
+
     .card h3 {
       font-size: 21px;
       margin: 0 0 10px;
@@ -277,8 +290,6 @@
       font-size: 12px;
       letter-spacing: 0.3px;
     }
-
-    /* Experience */
 
     .timeline {
       border-left: 2px solid var(--border);
@@ -331,8 +342,6 @@
       color: var(--text);
     }
 
-    /* Skills */
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -358,8 +367,6 @@
       font-size: 14px;
     }
 
-    /* Contact */
-
     .contact-box {
       background: linear-gradient(
         135deg,
@@ -377,6 +384,10 @@
       margin-bottom: 25px;
     }
 
+    .contact-box .buttons {
+      justify-content: center;
+    }
+
     footer {
       text-align: center;
       border-top: 1px solid var(--border);
@@ -384,8 +395,6 @@
       padding: 25px;
       font-size: 13px;
     }
-
-    /* Mobile */
 
     @media (max-width: 700px) {
       .nav-inner {
@@ -424,6 +433,10 @@
         grid-template-columns: 1fr;
       }
 
+      .project-image {
+        height: 190px;
+      }
+
       .contact-box {
         padding: 24px;
       }
@@ -437,6 +450,7 @@
 
   <nav>
     <div class="container nav-inner">
+
       <a class="logo" href="#home">
         BL<span>.</span>
       </a>
@@ -448,6 +462,7 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
+
     </div>
   </nav>
 
@@ -471,43 +486,41 @@
         practical and reliable solutions.
       </p>
 
-      
-<div class="buttons">
+      <div class="buttons">
 
-  <a class="btn btn-primary" href="#projects">
-    View My Projects →
-  </a>
+        <a class="btn btn-primary" href="#projects">
+          View My Projects →
+        </a>
 
-  <a class="btn btn-outline"
-     href="Beijing_Lin_Resume.pdf"
-     target="_blank"
-     rel="noopener noreferrer">
-    Resume ↗
-  </a>
+        <a class="btn btn-outline"
+           href="./Beijing_Lin_Resume.pdf"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Resume ↗
+        </a>
 
-  <a class="btn btn-outline"
-     href="https://www.linkedin.com/in/your-username/"
-     target="_blank"
-     rel="noopener noreferrer">
-    LinkedIn ↗
-  </a>
+        <a class="btn btn-outline"
+           href="https://www.linkedin.com/in/beijing-lin/"
+           target="_blank"
+           rel="noopener noreferrer">
+          LinkedIn ↗
+        </a>
 
-  <a class="btn btn-outline"
-     href="https://github.com/blin2006"
-     target="_blank"
-     rel="noopener noreferrer">
-    GitHub ↗
-  </a>
+        <a class="btn btn-outline"
+           href="https://github.com/blin2006"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub ↗
+        </a>
 
-</div>
-
+      </div>
 
     </div>
   </header>
 
   <main>
 
-    <!-- ABOUT ME -->
+    <!-- ABOUT -->
 
     <section id="about">
       <div class="container">
@@ -518,6 +531,7 @@
         </div>
 
         <div class="about-text">
+
           <p>
             I am an Electrical Engineering Co-op student
             at the University of British Columbia,
@@ -548,6 +562,7 @@
             <span class="tag">PCB Design</span>
             <span class="tag">Hardware Debugging</span>
           </div>
+
         </div>
 
       </div>
@@ -568,7 +583,16 @@
           <!-- TRON GAME -->
 
           <article class="card">
+
             <div class="project-icon">⌘</div>
+
+            <img
+              class="project-image contain"
+              src="images/tron-game.jpg"
+              alt="Real-Time Tron Light Cycle Game running on an FPGA platform"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
 
             <h3>Real-Time Tron Light Cycle Game</h3>
 
@@ -583,12 +607,22 @@
             <div class="tech">
               C · FPGA · VGA · Interrupts
             </div>
+
           </article>
 
           <!-- ROBOTIC ARM -->
 
           <article class="card">
+
             <div class="project-icon">⚙</div>
+
+            <img
+              class="project-image"
+              src="images/robotic-arm.jpg"
+              alt="Six-degree-of-freedom robotic arm hardware"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
 
             <h3>6-DOF Robotic Arm</h3>
 
@@ -603,12 +637,22 @@
               Robotics · Electrical Hardware ·
               Haptic Teleoperation
             </div>
+
           </article>
 
           <!-- GUITAR TUNER -->
 
           <article class="card">
+
             <div class="project-icon">♫</div>
+
+            <img
+              class="project-image contain"
+              src="images/guitar-tuner.jpg"
+              alt="ESP32 and microphone circuit for the automatic guitar tuner"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
 
             <h3>Automatic Guitar Tuner</h3>
 
@@ -625,11 +669,13 @@
               ESP32 · MAX9814 · Analog Circuits ·
               PCB Design · Power Electronics
             </div>
+
           </article>
 
           <!-- RISC-V -->
 
           <article class="card">
+
             <div class="project-icon">⌁</div>
 
             <h3>RISC-V Embedded I/O</h3>
@@ -644,14 +690,16 @@
             <div class="tech">
               RISC-V Assembly · Nios V · FPGA
             </div>
+
           </article>
 
           <!-- ALU -->
 
           <article class="card">
+
             <div class="project-icon">◇</div>
 
-            <h3>ALU Decoder & Simulation</h3>
+            <h3>ALU Decoder &amp; Simulation</h3>
 
             <p>
               Implemented combinational digital logic
@@ -662,6 +710,7 @@
             <div class="tech">
               SystemVerilog · Questa · Digital Logic
             </div>
+
           </article>
 
         </div>
@@ -686,7 +735,7 @@
           <div class="timeline-item">
 
             <h3>
-              Avionics Hardware & System Validation
+              Avionics Hardware &amp; System Validation
             </h3>
 
             <div class="organization">
@@ -722,15 +771,12 @@
 
             <p>
               Contributing to electrical hardware
-              development across UBC Open Robotics
-              projects.
+              development across UBC Open Robotics projects.
             </p>
 
             <div class="experience-project">
 
-              <h4>
-                6-DOF Robotic Arm | Current
-              </h4>
+              <h4>6-DOF Robotic Arm | Current</h4>
 
               <p>
                 Responsible for electrical work on the
@@ -743,9 +789,7 @@
 
             <div class="experience-project">
 
-              <h4>
-                Automatic Guitar Tuner
-              </h4>
+              <h4>Automatic Guitar Tuner</h4>
 
               <p>
                 Built a MAX9814 microphone-input circuit
@@ -781,7 +825,7 @@
         <div class="skills-grid">
 
           <div class="skill-group">
-            <h3>Programming & HDL</h3>
+            <h3>Programming &amp; HDL</h3>
             <p>
               C, Java, Python, RISC-V Assembly,
               Verilog, SystemVerilog
@@ -797,7 +841,7 @@
           </div>
 
           <div class="skill-group">
-            <h3>Modeling & EDA Tools</h3>
+            <h3>Modeling &amp; EDA Tools</h3>
             <p>
               MATLAB, Simulink, Proteus,
               LTspice, Altium Designer,
@@ -806,7 +850,7 @@
           </div>
 
           <div class="skill-group">
-            <h3>Development & Debugging</h3>
+            <h3>Development &amp; Debugging</h3>
             <p>
               Git/GitHub, Linux,
               Visual Studio, STM32CubeMX,
@@ -840,8 +884,7 @@
             and hardware design.
           </p>
 
-          <div class="buttons"
-               style="justify-content:center">
+          <div class="buttons">
 
             <a class="btn btn-primary"
                href="mailto:linbeijing2006@gmail.com">
@@ -849,10 +892,30 @@
             </a>
 
             <a class="btn btn-outline"
+               href="./Beijing_Lin_Resume.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Resume ↗
+            </a>
+
+            <a class="btn btn-outline"
+               href="./Beijing_Lin_Resume.pdf"
+               download="Beijing_Lin_Resume.pdf">
+              Download Resume ↓
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://www.linkedin.com/in/beijing-lin/"
+               target="_blank"
+               rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <a class="btn btn-outline"
                href="https://github.com/blin2006"
                target="_blank"
                rel="noopener noreferrer">
-              GitHub
+              GitHub ↗
             </a>
 
           </div>
@@ -868,8 +931,7 @@
 
   <footer>
     © <span id="year">2026</span> Beijing Lin.
-    Built with HTML & CSS.
-    Hosted on GitHub Pages.
+    Built with HTML &amp; CSS.
   </footer>
 
   <script>
