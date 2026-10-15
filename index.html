@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Beijing Lin - Electrical Engineering Co-op student at UBC. Engineering portfolio featuring embedded systems, robotics, FPGA, and software projects.">
+
   <title>Beijing Lin | Engineering Portfolio</title>
+
+  <meta name="description"
+        content="Beijing Lin - Electrical Engineering Co-op student at UBC. Portfolio featuring embedded systems, robotics, FPGA and software development.">
 
   <style>
     :root {
@@ -45,6 +48,8 @@
       width: min(1100px, 90%);
       margin: 0 auto;
     }
+
+    /* NAVIGATION */
 
     nav {
       position: sticky;
@@ -88,6 +93,8 @@
     .nav-links a:hover {
       color: var(--blue);
     }
+
+    /* HERO */
 
     .hero {
       min-height: 78vh;
@@ -138,6 +145,8 @@
       font-size: 18px;
     }
 
+    /* BUTTONS */
+
     .buttons {
       display: flex;
       gap: 14px;
@@ -174,6 +183,8 @@
     .btn-outline:hover {
       background: var(--surface-hover);
     }
+
+    /* SECTIONS */
 
     section {
       padding: 85px 0;
@@ -227,6 +238,8 @@
       font-size: 12px;
     }
 
+    /* PROJECTS */
+
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -262,11 +275,6 @@
       margin-bottom: 20px;
       border: 1px solid var(--border);
       background: #0b1526;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover .project-image {
-      transform: scale(1.02);
     }
 
     .project-image.contain {
@@ -290,6 +298,8 @@
       font-size: 12px;
       letter-spacing: 0.3px;
     }
+
+    /* EXPERIENCE */
 
     .timeline {
       border-left: 2px solid var(--border);
@@ -342,6 +352,8 @@
       color: var(--text);
     }
 
+    /* SKILLS */
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -366,6 +378,8 @@
       margin: 0;
       font-size: 14px;
     }
+
+    /* CONTACT */
 
     .contact-box {
       background: linear-gradient(
@@ -395,6 +409,8 @@
       padding: 25px;
       font-size: 13px;
     }
+
+    /* MOBILE */
 
     @media (max-width: 700px) {
       .nav-inner {
@@ -492,8 +508,9 @@
           View My Projects →
         </a>
 
+        <!-- CORRECTED RESUME FILE NAME -->
         <a class="btn btn-outline"
-           href="./Beijing_Lin_Resume.pdf"
+           href="./Beijing%20Lin_RESUME%202026.pdf"
            target="_blank"
            rel="noopener noreferrer">
           View Resume ↗
@@ -589,7 +606,7 @@
             <img
               class="project-image contain"
               src="images/tron-game.jpg"
-              alt="Real-Time Tron Light Cycle Game running on an FPGA platform"
+              alt="Tron Light Cycle Game"
               loading="lazy"
               onerror="this.style.display='none'"
             >
@@ -619,7 +636,7 @@
             <img
               class="project-image"
               src="images/robotic-arm.jpg"
-              alt="Six-degree-of-freedom robotic arm hardware"
+              alt="6-DOF Robotic Arm"
               loading="lazy"
               onerror="this.style.display='none'"
             >
@@ -649,7 +666,7 @@
             <img
               class="project-image contain"
               src="images/guitar-tuner.jpg"
-              alt="ESP32 and microphone circuit for the automatic guitar tuner"
+              alt="Automatic Guitar Tuner"
               loading="lazy"
               onerror="this.style.display='none'"
             >
@@ -891,15 +908,16 @@
               Email Me
             </a>
 
+            <!-- CORRECTED RESUME LINK -->
             <a class="btn btn-outline"
-               href="./Beijing_Lin_Resume.pdf"
+               href="./Beijing%20Lin_RESUME%202026.pdf"
                target="_blank"
                rel="noopener noreferrer">
               View Resume ↗
             </a>
 
             <a class="btn btn-outline"
-               href="./Beijing_Lin_Resume.pdf"
+               href="./Beijing%20Lin_RESUME%202026.pdf"
                download="Beijing_Lin_Resume.pdf">
               Download Resume ↓
             </a>
