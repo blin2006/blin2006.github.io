@@ -28,6 +28,11 @@
     .arm-mini {font-size:13px;color:var(--muted);margin-top:12px}
     .arm-actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
     .arm-formula {font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#a9dffc;background:#0d2034;border:1px solid #234d68;display:inline-block;padding:8px 12px;border-radius:7px;font-size:14px;margin:5px 0 11px;max-width:100%;overflow-wrap:anywhere}
+    .arm-architecture {border:1px solid var(--border);background:var(--surface);border-radius:14px;padding:18px;margin:22px 0 0}
+    .arm-architecture img {display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#fff;border-radius:8px}
+    .arm-architecture figcaption {font-size:14px;line-height:1.65;color:var(--muted);margin:17px 4px 1px}
+    .arm-architecture figcaption strong {color:var(--text)}
+    .arm-architecture a {font-weight:600}
     @media(max-width:700px){.arm-grid{grid-template-columns:1fr}.arm-flow{flex-direction:column}.arm-flow-arrow{align-self:center;transform:rotate(90deg)}.arm-card{padding:21px}}
   </style>
 </head>
@@ -56,9 +61,21 @@
     </div>
   </section>
 
+  <section id="system-architecture">
+    <div class="wrap">
+      <div class="arm-kicker">02 / System Architecture</div>
+      <h2>System Architecture Overview</h2>
+      <p class="arm-intro">The robotic arm integrates multiple DC power rails, microcontroller-based processing, sensing, motor drivers, and a teleoperation control pipeline. This high-level system diagram shows how the major subsystems relate.</p>
+      <figure class="arm-architecture">
+        <img src="arm-system-architecture.png" width="1168" height="742" loading="lazy" alt="System architecture diagram of a six-degree-of-freedom robotic arm showing 5 V and 36 V power supplies, a 36 V to 24 V buck converter, microcontroller, sensors, motor drivers, teleoperation control, and mechanical joints.">
+        <figcaption><strong>Figure 1 — Robotic arm system architecture (team-level overview).</strong> The diagram connects power infrastructure with sensing, control, and actuation. My contribution focused on electrical power requirements and distribution analysis, including load-current estimates, wire-gauge selection, and voltage-drop considerations. This is a system overview, not a final wiring schematic.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section>
     <div class="wrap">
-      <div class="arm-kicker">02 / Electrical Contributions</div>
+      <div class="arm-kicker">03 / Electrical Contributions</div>
       <h2>What I worked on</h2>
       <div class="arm-grid">
         <article class="arm-card"><span class="arm-number">01 &middot; POWER DEMAND</span><h3>Motor &amp; electronics load assessment</h3><p>Analyzed motor and electronic subsystem requirements to estimate current demand and identify the electrical loads relevant to the robot's power distribution design.</p></article>
@@ -71,7 +88,7 @@
 
   <section>
     <div class="wrap">
-      <div class="arm-kicker">03 / System Context</div>
+      <div class="arm-kicker">04 / System Context</div>
       <h2>Conceptual power path</h2>
       <p class="arm-section-head">A simplified view of the power delivery questions addressed during the electrical analysis:</p>
       <div class="arm-flow" aria-label="Conceptual battery to distribution board to robotic arm electrical loads">
@@ -87,7 +104,7 @@
 
   <section>
     <div class="wrap">
-      <div class="arm-kicker">04 / Analysis Method</div>
+      <div class="arm-kicker">05 / Analysis Method</div>
       <h2>How cable selection was evaluated</h2>
       <div class="arm-grid">
         <article class="arm-card"><h3>1. Estimate load current</h3><p>Account for the continuous operating demand of the relevant subsystems and separately review higher-load conditions.</p></article>
@@ -101,7 +118,7 @@
 
   <section>
     <div class="wrap">
-      <div class="arm-kicker">05 / Skills &amp; Takeaways</div>
+      <div class="arm-kicker">06 / Skills &amp; Takeaways</div>
       <h2>Applied engineering skills</h2>
       <ul class="arm-tech-list">
         <li>Current budgeting for mixed motor and electronic loads.</li>
