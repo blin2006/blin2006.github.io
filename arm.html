@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6-DOF robotic arm electrical power analysis, current budgeting, DC distribution wiring, and voltage-drop considerations at UBC Open Robotics — Beijing Lin.">
+  <title>6-DOF Robotic Arm | Electrical Engineering | Beijing Lin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific layout only; main colors and typography remain in style.css. */
+    .arm-intro {max-width:850px}
+    .arm-kicker {font-size:12px;font-weight:750;letter-spacing:1.6px;color:var(--blue);text-transform:uppercase;margin-bottom:12px}
+    .arm-section-head {max-width:800px;margin-bottom:22px}
+    .arm-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .arm-card {border:1px solid var(--border);border-radius:14px;background:var(--surface);padding:25px}
+    .arm-card h3 {font-size:20px;margin-bottom:11px;color:var(--text)}
+    .arm-card p {margin:0}
+    .arm-card .arm-number {display:inline-block;color:var(--blue);font-weight:700;font-size:12px;letter-spacing:1.1px;margin-bottom:12px}
+    .arm-flow {display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;margin-top:22px}
+    .arm-flow-node {flex:1 1 180px;min-width:170px;background:var(--surface);border:1px solid #315373;border-radius:12px;padding:19px}
+    .arm-flow-node strong {display:block;color:var(--text);margin-bottom:4px}
+    .arm-flow-node span {color:var(--muted);font-size:13px}
+    .arm-flow-arrow {align-self:center;color:var(--blue);font-weight:800;font-size:25px}
+    .arm-tech-list {margin:15px 0 0;padding-left:24px;color:var(--muted)}
+    .arm-tech-list li {margin-bottom:12px}
+    .arm-callout {background:linear-gradient(125deg,#11243a,#101a2b);border-left:3px solid var(--blue);padding:20px 24px;border-radius:8px;color:var(--muted);margin-top:22px}
+    .arm-callout strong {color:var(--text)}
+    .arm-mini {font-size:13px;color:var(--muted);margin-top:12px}
+    .arm-actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .arm-formula {font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#a9dffc;background:#0d2034;border:1px solid #234d68;display:inline-block;padding:8px 12px;border-radius:7px;font-size:14px;margin:5px 0 11px;max-width:100%;overflow-wrap:anywhere}
+    @media(max-width:700px){.arm-grid{grid-template-columns:1fr}.arm-flow{flex-direction:column}.arm-flow-arrow{align-self:center;transform:rotate(90deg)}.arm-card{padding:21px}}
+  </style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="logo" href="index.html">BL<span style="color:#38bdf8">.</span></a>
+  <nav class="navlinks"><a href="index.html">Home</a><a href="index.html#projects">Projects</a><a href="rocket.html">UBC Rocket</a><a href="tron.html">Tron Game</a><a href="index.html#contact">Contact</a></nav>
+</div></header>
+<main>
+  <div class="wrap">
+    <div class="detailhero">
+      <a class="back" href="index.html#projects">&larr; Back to Projects</a>
+      <div class="eyebrow" style="margin-top:30px">UBC Open Robotics &middot; Electrical Engineering</div>
+      <h1>6-DOF Robotic Arm</h1>
+      <p class="lead arm-intro">Electrical power requirements, current budgeting, and battery-to-power-distribution wiring for a six-degree-of-freedom robotic arm being used in a haptic teleoperation project.</p>
+      <div class="tags"><span class="tag">Robotics</span><span class="tag">Power Distribution</span><span class="tag">Current Analysis</span><span class="tag">Wire Gauge Selection</span><span class="tag">Voltage Drop</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="arm-kicker">01 / Project Overview</div>
+      <h2>Electrical engineering behind a moving system</h2>
+      <p class="arm-intro">This work supports an existing 6-DOF robotic arm subsystem within a wider haptic teleoperation project. My contribution focuses on evaluating electrical power needs and the practical wiring constraints that connect battery power to the rest of the system.</p>
+      <p class="arm-intro">The goal of the analysis is to inform component and cable selection, with attention to continuous load, possible current peaks, conductor length, and allowable voltage drop.</p>
+      <div class="arm-callout"><strong>My contribution:</strong> electrical analysis and evaluation of the power path. This page describes design calculations and selection considerations, not a claim that the full robotic-arm electrical system has been manufactured or validated by me.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="arm-kicker">02 / Electrical Contributions</div>
+      <h2>What I worked on</h2>
+      <div class="arm-grid">
+        <article class="arm-card"><span class="arm-number">01 &middot; POWER DEMAND</span><h3>Motor &amp; electronics load assessment</h3><p>Analyzed motor and electronic subsystem requirements to estimate current demand and identify the electrical loads relevant to the robot's power distribution design.</p></article>
+        <article class="arm-card"><span class="arm-number">02 &middot; DISTRIBUTION</span><h3>Battery-to-distribution wiring</h3><p>Evaluated the wiring path between the battery and power distribution board, considering the implications of cable run length and load current.</p></article>
+        <article class="arm-card"><span class="arm-number">03 &middot; CABLE SELECTION</span><h3>Wire gauge &amp; current capacity</h3><p>Compared copper wire gauge options against continuous-current requirements and considered transient or peak-current conditions when assessing suitability.</p></article>
+        <article class="arm-card"><span class="arm-number">04 &middot; VOLTAGE LOSS</span><h3>Voltage-drop considerations</h3><p>Examined how conductor resistance and round-trip cable length influence voltage drop, informing trade-offs among cable size, flexibility, and electrical performance.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="arm-kicker">03 / System Context</div>
+      <h2>Conceptual power path</h2>
+      <p class="arm-section-head">A simplified view of the power delivery questions addressed during the electrical analysis:</p>
+      <div class="arm-flow" aria-label="Conceptual battery to distribution board to robotic arm electrical loads">
+        <div class="arm-flow-node"><strong>Battery source</strong><span>Supply current and power limits</span></div>
+        <span class="arm-flow-arrow" aria-hidden="true">&rarr;</span>
+        <div class="arm-flow-node"><strong>Power wiring</strong><span>Gauge, cable length, current, voltage loss</span></div>
+        <span class="arm-flow-arrow" aria-hidden="true">&rarr;</span>
+        <div class="arm-flow-node"><strong>Distribution &amp; loads</strong><span>Motor and electronic subsystems</span></div>
+      </div>
+      <p class="arm-mini">Conceptual illustration only; not the team's electrical schematic or final wiring diagram.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="arm-kicker">04 / Analysis Method</div>
+      <h2>How cable selection was evaluated</h2>
+      <div class="arm-grid">
+        <article class="arm-card"><h3>1. Estimate load current</h3><p>Account for the continuous operating demand of the relevant subsystems and separately review higher-load conditions.</p></article>
+        <article class="arm-card"><h3>2. Check conductor suitability</h3><p>Compare candidate cable sizes using the installation conditions and the appropriate current-carrying limits.</p></article>
+        <article class="arm-card"><h3>3. Estimate voltage drop</h3><div class="arm-formula">Delta V = I &times; R<sub>loop</sub></div><p>Use total circuit resistance, including the outgoing and return conductors, rather than only one-way cable length.</p></article>
+        <article class="arm-card"><h3>4. Review trade-offs</h3><p>Consider physical cable flexibility and routing alongside electrical losses and possible peak-current constraints.</p></article>
+      </div>
+      <div class="arm-callout"><strong>Engineering focus:</strong> translating load requirements into practical wiring decisions, with attention to safe current handling, voltage availability at the load, and design trade-offs.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="arm-kicker">05 / Skills &amp; Takeaways</div>
+      <h2>Applied engineering skills</h2>
+      <ul class="arm-tech-list">
+        <li>Current budgeting for mixed motor and electronic loads.</li>
+        <li>Power distribution and battery cable evaluation.</li>
+        <li>AWG conductor sizing and continuous-current considerations.</li>
+        <li>DC voltage-drop analysis and physical wiring trade-offs.</li>
+      </ul>
+      <div class="arm-actions"><a class="btn" href="index.html#projects">&larr; All Projects</a><a class="btn secondary" href="rocket.html">Explore STM32 / UBC Rocket &rarr;</a></div>
+    </div>
+  </section>
+</main>
+<footer class="footer">&copy; 2026 Beijing Lin &middot; <a href="index.html">Back to Portfolio</a></footer>
+</body>
+</html>
